@@ -26,7 +26,7 @@ rpc(Pid, Request) ->
   end.
   
 client(Data) ->
-  loop(Data, Base).
+  loop(Data, Data).
   
 loop(Data, Base) ->
   receive
@@ -57,5 +57,5 @@ loop(Data, Base) ->
 data_update(Id, NewValue, Data) ->
   lists:keystore(Id, 1, Data, {Id, {NewValue, 0}}).
   
-data_sync(Data, Base) ->
+data_sync(Data, Base) -> void.
   
